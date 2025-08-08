@@ -10,7 +10,8 @@ CREATE TABLE users (
                        username VARCHAR(100) NOT NULL UNIQUE,
                        password VARCHAR(255) NOT NULL,
                        full_name VARCHAR(150) NOT NULL,
-                       email VARCHAR(150) NOT NULL
+                       email VARCHAR(150) NOT NULL,
+                       enabled BOOLEAN NOT NULL
 );
 
 -- Tabla intermedia para la relación muchos a muchos
@@ -29,8 +30,8 @@ INSERT INTO roles (name) VALUES ('TRABAJADOR');
 INSERT INTO roles (name) VALUES ('CLIENTE');
 
 -- Insertar usuario de prueba
-INSERT INTO users(username, password, full_name, email)
+INSERT INTO users(username, password, full_name, email, enabled)
 VALUES
-('vifer', '$2a$12$UA643rNLN73z.qeaJzdBNuPuaE0boML77bV28GX37JNSR3SCANdXm', 'Victor Fernández', 'pvictfer@cibertec.edu.pe');
+('vifer', '$2a$12$UA643rNLN73z.qeaJzdBNuPuaE0boML77bV28GX37JNSR3SCANdXm', 'Victor Fernández', 'pvictfer@cibertec.edu.pe', true);
 INSERT INTO user_roles(user_id, role_id) VALUES (1, 1);
 

@@ -25,5 +25,5 @@ public class UserRequestDto {
 
 
     @NotNull(message = "Se debe especificar al menos un rol")
-    private Set<Long> roleIds;
+    private Long roleId;
 }

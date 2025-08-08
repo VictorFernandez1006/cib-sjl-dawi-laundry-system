@@ -4,6 +4,7 @@ import com.coudevi.security.filter.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -38,6 +39,11 @@ public class SecurityConfig {
                                 .requestMatchers("/api/recepcionista/**").hasRole("RECEPCIONISTA")
                                 // SOlo para administradores
                                 .requestMatchers("/api/admin/**").hasRole("ADMIN")
+                                .requestMatchers(HttpMethod.POST, "/api/users").hasRole("ADMIN")
+                                .requestMatchers(HttpMethod.GET, "/api/users/**").hasRole("ADMIN")
+                                .requestMatchers(HttpMethod.PATCH,  "/api/users/**").hasRole("ADMIN")
+                                .requestMatchers(HttpMethod.PUT,    "/api/users/**").hasRole("ADMIN")
+                                .requestMatchers(HttpMethod.DELETE, "/api/users/**").hasRole("ADMIN")
                         // lo demás requiere autenticación
                                 .anyRequest().authenticated()
                 )
