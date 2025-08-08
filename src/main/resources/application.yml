@@ -13,9 +13,10 @@ spring:
       hibernate:
         format_sql: true
 
-jwt:
-  secret-key: una_clave_super_secreta_y_segura_1234567890
-  expiration-minutes: 3
+security:
+  jwt:
+    secret-key: una_clave_super_secreta_y_segura_1234567890
+    expiration: 180000
 
 flyway:
   enabled: true
