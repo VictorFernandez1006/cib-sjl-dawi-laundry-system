@@ -44,7 +44,8 @@ public class SecurityConfig {
                                 .requestMatchers(HttpMethod.PATCH,  "/api/users/**").hasRole("ADMIN")
                                 .requestMatchers(HttpMethod.PUT,    "/api/users/**").hasRole("ADMIN")
                                 .requestMatchers(HttpMethod.DELETE, "/api/users/**").hasRole("ADMIN")
-                        // lo demás requiere autenticación
+                                .requestMatchers(HttpMethod.POST, "/api/clientes").hasAnyRole("ADMIN", "RECEPCIONISTA")
+                                // lo demás requiere autenticación
                                 .anyRequest().authenticated()
                 )
                 .authenticationProvider(authenticationProvider())
