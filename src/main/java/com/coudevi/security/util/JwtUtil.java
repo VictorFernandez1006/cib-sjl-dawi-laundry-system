@@ -21,14 +21,13 @@ public class JwtUtil {
 
     @Value("${security.jwt.expiration}")
     private long expirationMs;
-    private final String CLAIM_ROLE = "roles";
 
     private Key getSigninKey() {
         return Keys.hmacShaKeyFor(secretKey.getBytes());
     }
     public String generateToken(UserDetails userDetails){
         Map<String, Object> claims = Map.of(
-                CLAIM_ROLE, userDetails.getAuthorities()
+                "roles", userDetails.getAuthorities()
                         .stream()
                         .map(GrantedAuthority::getAuthority)
                         .toList()

@@ -27,3 +27,10 @@ INSERT INTO roles (name) VALUES ('ADMIN');
 INSERT INTO roles (name) VALUES ('RECEPCIONISTA');
 INSERT INTO roles (name) VALUES ('TRABAJADOR');
 INSERT INTO roles (name) VALUES ('CLIENTE');
+
+-- Insertar usuario de prueba
+INSERT INTO users(username, password, full_name, email)
+VALUES
+('vifer', '$2a$12$UA643rNLN73z.qeaJzdBNuPuaE0boML77bV28GX37JNSR3SCANdXm', 'Victor Fernández', 'pvictfer@cibertec.edu.pe');
+INSERT INTO user_roles(user_id, role_id) VALUES (1, 1);
+
