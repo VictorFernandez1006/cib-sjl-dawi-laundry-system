@@ -27,6 +27,8 @@ public class UserEntity {
     private String fullName;
     @Column(nullable = false)
     private String email;
+    @Column(nullable = false)
+    private Boolean enabled = true;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
