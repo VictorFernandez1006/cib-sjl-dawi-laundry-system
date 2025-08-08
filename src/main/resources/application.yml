@@ -7,7 +7,7 @@ spring:
     password: mysql
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     show-sql: true
     properties:
       hibernate:
@@ -20,3 +20,5 @@ jwt:
 flyway:
   enabled: true
   locations: classpath:db/migration
+server:
+  port: 9090
