@@ -4,7 +4,7 @@
 **Versión:** 1.0.0  
 **Tecnologías:**
 - Java 17
-- Spring Boot 3.2.x
+- Spring Boot 3.5.4
 - Spring Security con JWT
 - Spring Data JPA + MySQL
 - Lombok
