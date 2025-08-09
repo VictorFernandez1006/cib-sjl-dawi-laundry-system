@@ -39,4 +39,20 @@ public class OrderEntity {
 
     @Column(name="created_at", nullable=false)
     private LocalDateTime createdAt;
+    @Column(name = "finished_at")
+    private LocalDateTime finishedAt;
+
+    @ManyToOne
+    @JoinColumn(name = "finished_by")
+    private UserEntity finishedBy;
+
+    @Column(name = "delivered_at")
+    private LocalDateTime deliveredAt;
+
+    @ManyToOne
+    @JoinColumn(name = "delivered_by")
+    private UserEntity deliveredBy;
+
+    @Column(name = "receiver_name")
+    private String receiverName;
 }

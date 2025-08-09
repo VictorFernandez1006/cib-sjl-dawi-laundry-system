@@ -44,6 +44,13 @@ public class OrderMapperImpl implements OrderMapper {
                 .notes(entity.getNotes())
                 .assignedToUserId(entity.getAssignedTo() != null ? entity.getAssignedTo().getId() : null)
                 .createdAt(entity.getCreatedAt())
+                .finishedAt(entity.getFinishedAt())
+                .finishedByUserId(entity.getFinishedBy() != null ? entity.getFinishedBy().getId() : null)
+                .finishedByUsername(entity.getFinishedBy() != null ? entity.getFinishedBy().getUsername() : null)
+                .deliveredAt(entity.getDeliveredAt())
+                .deliveredByUserId(entity.getDeliveredBy() != null ? entity.getDeliveredBy().getId() : null)
+                .deliveredByUsername(entity.getDeliveredBy() != null ? entity.getDeliveredBy().getUsername() : null)
+                .receiverName(entity.getReceiverName())
                 .build();
     }
 }

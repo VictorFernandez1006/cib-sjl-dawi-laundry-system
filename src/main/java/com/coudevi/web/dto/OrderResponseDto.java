@@ -24,4 +24,14 @@ public class OrderResponseDto {
     private String notes;
     private Long assignedToUserId;
     private LocalDateTime createdAt;
+
+    private LocalDateTime finishedAt;
+    private Long finishedByUserId;
+    private String finishedByUsername;
+
+    private LocalDateTime deliveredAt;
+    private Long deliveredByUserId;
+    private String deliveredByUsername;
+
+    private String receiverName;
 }
