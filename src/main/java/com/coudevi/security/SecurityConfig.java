@@ -46,6 +46,10 @@ public class SecurityConfig {
                                 .requestMatchers(HttpMethod.DELETE, "/api/users/**").hasRole("ADMIN")
                                 .requestMatchers(HttpMethod.POST, "/api/clientes").hasAnyRole("ADMIN", "RECEPCIONISTA")
                                 .requestMatchers(HttpMethod.POST, "/api/orders").hasAnyRole("ADMIN", "RECEPCIONISTA")
+                                .requestMatchers(HttpMethod.GET,  "/api/orders/available").hasRole("TRABAJADOR")
+                                .requestMatchers(HttpMethod.POST, "/api/orders/*/take").hasRole("TRABAJADOR")
+                                .requestMatchers(HttpMethod.GET,  "/api/orders/my/active").hasRole("TRABAJADOR")
+                                .requestMatchers(HttpMethod.PATCH, "/api/orders/*/assign").hasRole("ADMIN")
                                 // lo demás requiere autenticación
                                 .anyRequest().authenticated()
                 )
