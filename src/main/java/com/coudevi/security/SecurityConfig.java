@@ -56,6 +56,7 @@ public class SecurityConfig {
                                 .requestMatchers(HttpMethod.PUT,    "/api/service-types/**").hasRole("ADMIN")
                                 .requestMatchers(HttpMethod.PATCH,  "/api/service-types/**").hasRole("ADMIN")
                                 .requestMatchers(HttpMethod.GET,    "/api/service-types/**").hasRole("ADMIN")
+                                .requestMatchers(HttpMethod.GET, "/api/client/orders").hasRole("CLIENTE")
                                 // lo demás requiere autenticación
                                 .anyRequest().authenticated()
                 )
